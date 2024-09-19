@@ -1,0 +1,15 @@
+.tbr-button {
+   /* background-color: #333333;*/
+    border: none;
+    color: #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.tbr-button:hover{
+    background-color: #e0e0e0
+}

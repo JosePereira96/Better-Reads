@@ -1,0 +1,28 @@
+.add-shelf-btn {
+    background-color: #2a2a2a;
+    border: none;
+    color: #b0b0b0;
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem; 
+    margin-top: 1rem;
+    width: calc(100% - 2rem); 
+    margin-left: 1rem; 
+}
+
+.add-shelf-btn:hover {
+    background-color: #4f83cc; 
+    color: #ffffff; 
+}
+
+.add-shelf-div{
+    display: block;
+    padding-top: 1rem;
+    font-size: 1rem;
+}
+    
+input#shelfName{
+    margin: 0.25rem 0.1rem 0.9rem 0rem;
+    width: 50%;
+}

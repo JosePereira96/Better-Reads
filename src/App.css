@@ -1,38 +1,134 @@
-.App {
+/*
+#root{
+  --border-radius-500: 8px;
+  --color-on-background: #ffffff;
+  --fonts-primary: Karla, sans-serif;
+  width: 100%;
+  align-self: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2a385c;
+  background-image: linear-gradient(320deg, hsl(215, 10%, 12%) 0%, hsl(215, 19%, 24%)  100%);
+  font-family: var(--fonts-primary);
+  font-size: 14px;
+  margin: 0;
+  min-height: 100vh;
+  align-self: center;
+  width: 100%;
+}
+
+.layout__wrapper {
+  background-image: linear-gradient(0deg, hsl(215, 14%, 16%) 0%, hsl(215, 19%, 29%) 100%);
+  border-radius: 3px;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, .25);
+  margin: 3rem auto;
+  max-width: 500px;
+
+}
+
+.card {
+  align-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.store-container {
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(0, 247, 255);
+}
+
+.items-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.item-container {
+  padding: 5px;
+  border-bottom: 1px solid grey
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*/
+
+div#root{
+  width: 100%;
+  align-self: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+
+.coming-soon-section {
+    width: 100%;
+    background-color: #2c2c2c; /* Darker background for the coming soon section */
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.coming-soon-section h2 {
+    margin-top: 0;
+    color: #ffffff; /* Light text color for headings */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coming-soon-section p {
+    color: #dcdcdc; /* Slightly lighter text color for paragraphs */
+}
+
+.coming-soon-section a {
+    color: #1e90ff; /* Light blue color for links */
+    text-decoration: none;
+}
+
+.coming-soon-section a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.about-section {
+    width: 100%;
+    background-color: #2c2c2c; /* Darker background for the about section */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.about-section h2,
+.about-section h3 {
+    margin-top: 0;
+    color: #ffffff; /* Light text color for headings */
+}
+
+.about-section p,
+.about-section ul {
+    color: #dcdcdc; /* Slightly lighter text color for paragraphs and lists */
+}
+
+.about-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.about-section a {
+    color: #1e90ff; /* Light blue color for links */
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    text-decoration: underline;
 }

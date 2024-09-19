@@ -1,0 +1,191 @@
+/*
+#root{
+  --border-radius-500: 8px;
+  --color-on-background: #ffffff;
+  --fonts-primary: Karla, sans-serif;
+  width: 100%;
+  align-self: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2a385c;
+  background-image: linear-gradient(320deg, hsl(215, 10%, 12%) 0% , hsl(215, 19%, 24%) 100%);
+  font-family: var(--fonts-primary);
+  font-size: 14px;
+  margin: 0;
+  min-height: 100vh;
+  align-self: center;
+  width: 100%;
+}
+
+button{
+  background-color: black;
+}
+
+.layout__wrapper {
+  background-image: linear-gradient(0deg, hsl(215, 14%, 16%) 0%, hsl(215, 19%, 29%) 100%);
+  border-radius: 3px;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, .25);
+  margin: 3rem auto;
+  max-width: 500px;
+
+}
+
+.card {
+  align-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.store-container {
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(0, 247, 255);
+}
+
+.items-container {
+  text-align: center;
+}
+
+.item-container {
+  padding: 5px;
+  border-bottom: 1px solid grey
+}
+
+*/
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.TBRContainer {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 2rem;
+    width: 100%;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.header {
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.header img{
+  width: 25;
+  height: 25px;
+}
+
+
+
+
+
+
+
+
+.tbr-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+.month {
+    width: 90%;
+    max-width: 500px;
+    background-color: #1f1f1f;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    align-self: center;
+}
+
+.month h3{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.book {
+    display: flex;
+    /*align-items: center;*/
+    background-color: #333333;
+    padding: 0.4rem;
+    margin: 0.75rem 0;
+    border-radius: 3px;
+    cursor: grab;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.bookInfo{
+  display: flex;
+  width: 100%;
+}
+
+.coverPhoto img{
+    width: 100px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+
+.titleAuthor {
+    flex-grow: 1;
+}
+
+.bookTitle, .bookAuthor {
+    margin: 0;
+}
+
+.bookTitle {
+    font-weight: bold;
+}
+
+
+.buttons{
+
+}
+/*
+.readButton, .removeButton{
+    background-color: #4f83cc;
+    border: none;
+    color: #e0e0e0;
+    padding: 0.3rem 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.readButton:hover, .removeButton:hover{
+    background-color: #1f76c3;
+}
+
+*/
+
+
