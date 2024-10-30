@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Better-Reads/static/css/main.b7744a23.css",
-    "main.js": "/Better-Reads/static/js/main.d237e740.js",
+    "main.js": "/Better-Reads/static/js/main.de6d15bb.js",
     "static/media/bookIcon.svg": "/Better-Reads/static/media/bookIcon.dd8ef6f86bcb88953825823c6a66eb0b.svg",
     "index.html": "/Better-Reads/index.html",
     "main.b7744a23.css.map": "/Better-Reads/static/css/main.b7744a23.css.map",
-    "main.d237e740.js.map": "/Better-Reads/static/js/main.d237e740.js.map"
+    "main.de6d15bb.js.map": "/Better-Reads/static/js/main.de6d15bb.js.map"
   },
   "entrypoints": [
     "static/css/main.b7744a23.css",
-    "static/js/main.d237e740.js"
+    "static/js/main.de6d15bb.js"
   ]
 }
