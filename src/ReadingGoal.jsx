@@ -1,5 +1,5 @@
-import { useState } from "react"; 
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"; 
+import { Link, useParams, Navigate } from "react-router-dom";
 
 import "./ReadingGoal.css";
 import bookIcon from './assets/bookIcon.svg';
@@ -9,29 +9,50 @@ import { faBook,faBookOpen } from '@fortawesome/free-solid-svg-icons';
 
 
 import useComponentVisible from "./useComponentVisible";
+import Cover from './Cover';
 
 
 
-function ReadingGoal({ loadLocalStorage, currentYear }) {
-	let currentYearGoal;
+function ReadingGoal({ loadLocalStorage, updateGoal }) {
+	
+	const [goals,setGoals] = useState(loadLocalStorage('readingGoals'));
 
-	let fileData = loadLocalStorage('readingGoals');
+	//update local storage
+    //useEffect( () => {updateGoal(goals)}, [goals]);
 
-	for(let i in fileData){
-		if(fileData[i].Year === currentYear){
-			currentYearGoal = fileData[i];
+
+	let { year } = useParams();
+	year = parseInt(year);
+
+
+    let auxGoal, auxProgress;
+
+	for(let i in goals){
+		if(goals[i].Year === year){
+			auxGoal = goals[i];
+			auxProgress = Math.floor(auxGoal.BooksRead.length / auxGoal.Goal * 100);
+			auxProgress = Math.min(100,auxProgress);
+			/*
+			setEditedGoal({...goals[i]});
+			setProgress( () => {
+				let aux = Math.floor(editedGoal.BooksRead.length / editedGoal.Goal * 100);
+				return Math.min(100,progress);
+			})
+			*/
 			break;
 		}
 	}
 
-	const [editedGoal, setEditedGoal] = useState(currentYearGoal);
-
-	let progress = Math.floor(editedGoal.BooksRead.length / editedGoal.Goal * 100);
-	progress = Math.min(100,progress);
-
-	
+	//edit goal box
+	const [editedGoal, setEditedGoal] = useState(auxGoal);
+	const [progress, setProgress] = useState(auxProgress);
 	const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
+
+	
+	if(!goals){
+        return <Navigate to="../../home" relative="path"/>;
+    }
 
 	const handleEdit = () => {
 		setIsComponentVisible(true);
@@ -50,6 +71,8 @@ function ReadingGoal({ loadLocalStorage, currentYear }) {
   		setIsComponentVisible(false);
   	}
 
+
+  	
 
 	function Box({year, goal, handleConfirm, handleCancel}) {
 		
@@ -143,7 +166,7 @@ function ReadingGoal({ loadLocalStorage, currentYear }) {
 			        
 			            <div className="images-container">
 			                {editedGoal.BooksRead.map( book => {
-	          					return(<img src={book.imageURL[0]} alt={`${book.Title} by ${book.Author}`}/>);	
+	          					return(<Cover bookInfo={book}/>);
 			      			})}
 			            </div>
 
@@ -151,12 +174,12 @@ function ReadingGoal({ loadLocalStorage, currentYear }) {
 		            </div>
 		            <div className="side-menu">
 		                <ul>
-		                	{fileData.map( goal => {
-		                		if(goal.Year != currentYear){
+		                	{goals.map( goal => {
+		                		if(goal.Year != year){
 			                		return(
 			                			<li>
 					                    	<img className="bookIcon" src={bookIcon}/>
-					                    	<Link reloadDocument to={'/reading-goal/' + goal.Year}>
+					                    	<Link reloadDocument to={`../${goal.Year}`} relative="path">
 					                    		<span>{goal.Year} Reading Challenge</span>
 					                    	</Link>
 					                    </li>

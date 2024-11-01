@@ -17,9 +17,7 @@ function TBR({ loadLocalStorage, setLocalStorage, updateLibrary, updateTBR}) {
     setLocalStorage('tbr', tbr)
   }, [tbr]);
   
-  if(!tbr){
-    return <Navigate to="/null"/>;
-  }
+  
 
 
   
@@ -93,12 +91,15 @@ function TBR({ loadLocalStorage, setLocalStorage, updateLibrary, updateTBR}) {
     );
   }
 
-
+  if(!tbr){
+    return <Navigate to="../home"/>;
+  }
+  
   return (
     <>
     <div className="TBRContainer">
       <div className="header">
-        <h2>TBR <img src="../images/books.jpg"/></h2>
+        <h2>TBR <img src="./books.jpg"/></h2>
       </div>
 
 

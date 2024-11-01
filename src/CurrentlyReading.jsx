@@ -3,6 +3,7 @@ import useComponentVisible from "./useComponentVisible";
 import blankImage from './assets/blank.jpg';
 
 import ReadButton from './ReadButton'; 
+import Cover from './Cover';
 
 function CurrentlyReading({ loadLocalStorage, updateLibrary, updateTBR}) {
 	
@@ -20,7 +21,7 @@ function CurrentlyReading({ loadLocalStorage, updateLibrary, updateTBR}) {
 			(<div className="currentlyReadingItem">
 				<span className="bookTitle">{bookInfo.Title}</span>
 				<p className="bookAuthor">{bookInfo.Author}</p>
-				<img className="bookCover" src={bookInfo.imageURL.length === 0 ? blankImage : bookInfo.imageURL[0]}/>
+				<Cover bookInfo={bookInfo}/>
 				<ReadButton bookInfo={bookInfo} 
                             setBookInfo={setBookInfo}
 	                        setIsBookVisible={setIsBookVisible}

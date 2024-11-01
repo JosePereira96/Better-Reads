@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, Navigate} from "react-router-dom";
 
 
 import ShelfItem from './ShelfItem';
@@ -14,10 +14,12 @@ import './Bookshelves.css';
 
 
 
-function Bookshelves({ loadLocalStorage, updateLibrary, updateTBR, updateShelves, shelfName }) {
+function Bookshelves({ loadLocalStorage, updateLibrary, updateTBR, updateShelves }) {
 
     const [fileData,setFileData] = useState(loadLocalStorage('library'));
     const [shelves,setShelves] = useState(loadLocalStorage('shelves'));
+
+    const { shelfName } = useParams();
 
     //update local storage
     useEffect( () => {updateShelves(shelves)}, [shelves]);
@@ -26,6 +28,16 @@ function Bookshelves({ loadLocalStorage, updateLibrary, updateTBR, updateShelves
 
     const handleInput = e => {
         setSearchField(e.toLowerCase());       
+    }
+
+
+
+    if(!fileData || !shelves){
+        return <Navigate to="../../home" relative="path"/>;
+    }
+
+    if(!shelves.includes(shelfName)){
+        return <Navigate to="../all" relative="path"/>;
     }
     
 	return(	
@@ -41,17 +53,17 @@ function Bookshelves({ loadLocalStorage, updateLibrary, updateTBR, updateShelves
 
             <h3>Shelves</h3>
             <ul>
-                <li><Link to='/bookshelves/all'>All</Link></li>
-                <li><Link to='/bookshelves/read'>Read</Link></li>
-                <li><Link to='/bookshelves/currently-reading'>Currently Reading</Link></li>
-                <li><Link to="/bookshelves/want-to-read">Want to Read</Link></li>
+                <li><Link to='../all' relative="path">All</Link></li>
+                <li><Link to='../read' relative="path">Read</Link></li>
+                <li><Link to='../currently-reading' relative="path">Currently Reading</Link></li>
+                <li><Link to='../want-to-read' relative="path">Want to Read</Link></li>
                 <hr/>
                 
                 {shelves.map( (s,index) => {
                         //ignores 'all' 'read' 'currently-reading' and 'want-to-read'
                         if(index>3){
 							return(
-								<li><Link to={"/bookshelves/"+s}>{s}</Link></li>
+								<li><Link to={`../${s}`} relative="path">{s}</Link></li>
 							);
                         }
 				})}

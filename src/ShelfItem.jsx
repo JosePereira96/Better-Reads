@@ -7,6 +7,7 @@ import RemoveButton from './RemoveButton';
 import EditButton from './EditButton';
 import ChangeEditionButton from './ChangeEditionButton';
 import AddToTBRButton from './AddToTBRButton'
+import Cover from './Cover';
 
 import "./ShelfItem.css"
 
@@ -38,8 +39,7 @@ function ShelfItem({ loadLocalStorage, updateLibrary, updateTBR, index }) {
 				<td>
 					<div className="coverFotoDiv">
 						<div className="coverFoto">
-							<img
-							src={bookInfo.imageURL.length === 0 ? blankImage : bookInfo.imageURL[0]}/>
+							<Cover bookInfo={bookInfo}/>
 						</div>
 						
 						<ChangeEditionButton className="change-edition-btn" bookInfo={bookInfo} setBookInfo={setBookInfo} />

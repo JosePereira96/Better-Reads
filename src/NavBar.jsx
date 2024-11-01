@@ -12,30 +12,30 @@ function NavBar({loadLocalStorage}) {
 	return(
 		<header className="navbar">
 	        <div className="navbar-left">
-		        <Link to='/'>
+		        <Link to='/Better-Reads/home'>
 		            <div className="navbar-brand">BetterReads</div>
 		        </Link>
 	            
 	            <nav className="navbar-nav">
-	            	<Link reloadDocument to={fileData ? '/tbr' : '/'}>
+	            	<Link reloadDocument to='/Better-Reads/tbr'>
 	                	<span>TBR</span>
 	                </Link>
 
-	                <Link reloadDocument to={fileData ? '/bookshelves/all' : '/'}>
+	                <Link reloadDocument to='/Better-Reads/bookshelves/all'>
 	                	<span>My Books</span>
 	                </Link>
 
-	                <Link to={fileData ? '/reading-goal/' + currentYear : '/'}>
+	                <Link reloadDocument to={`/Better-Reads/reading-goal/${currentYear}`}>
 	                	<span>Reading Goals</span>
 	                </Link>
 
-	                <Link to='/recommendations'>
+	                <Link to='/Better-Reads/recommendations'>
 	                	<span>Recommendations</span>
 	                </Link>
 	            </nav>
 	        </div>
 	        <nav className="navbar-right">
-	        	<Link to="/about">
+	        	<Link to="/Better-Reads/about">
 	            	<span>About</span>            
 	            </Link>
 	        </nav>

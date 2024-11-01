@@ -48,14 +48,9 @@ export function processAuthor(author) {
   return [author,processedAuthor];
 }
 
-export async function trimData(input, isObject){
-  let data;
+export async function trimData(input){
+  let data = await csvtojson().fromString(input);
 
-  if(isObject){
-    data = input;
-  } else{
-    data = await csvtojson().fromString(input);
-  }
 
   //removes properties that are not needed of every item;
   data.forEach(item => {

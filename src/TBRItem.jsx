@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import RemoveButton from './RemoveButton';
 import ReadButton from './ReadButton';
+import Cover from './Cover';
 
 //import './TBRItem.css';
 
@@ -30,7 +31,7 @@ function TBRItem({ book, index, updateLibrary, updateTBR }){
                   <div className="bookInfo">
 
                     <div className="coverPhoto">
-                    	<img src={coverImageSrc}/>
+                      <Cover bookInfo={bookInfo} />
                     </div>
                     
                     <div className="titleAuthor">

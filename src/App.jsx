@@ -55,8 +55,6 @@ function App() {
         updatedData[index] = editedData;  
       }
     }
-
-    
     
     setLocalStorage('library',updatedData);    
   }
@@ -116,18 +114,15 @@ function App() {
   }
 
 
-  const updateGoal = () => {}
+  const updateGoal = (input) => {
+    setLocalStorage('readingGoals', input);
+  }
   
   const updateShelves = (input) => {
     setLocalStorage('shelves', input);
   }
 
   
-  //let shelvesList = loadLocalStorage('shelves');
-  //const [shelves,setShelves] = useState(shelvesList);
-  let shelves = loadLocalStorage('shelves');
-
-  let readingGoals = loadLocalStorage('readingGoals');
 
   return (
     <>
@@ -137,33 +132,30 @@ function App() {
       <NavBar loadLocalStorage={loadLocalStorage}/>
       
       <Routes>
-        <Route index element={<HomePage setLocalStorage={setLocalStorage}/>}/>
-        
-        <Route path="/tbr" element={<TBR loadLocalStorage={loadLocalStorage}
-                                         setLocalStorage={setLocalStorage}
-                                         updateLibrary={updateLibrary} 
-                                         updateTBR={updateTBR}/>}/>
-        
-        
-        {shelves && shelves.map(s => {
-              return(<Route path={"/bookshelves/" + s} 
-                            element={<Bookshelves loadLocalStorage={loadLocalStorage}
-                                                  updateLibrary={updateLibrary}
-                                                  updateTBR={updateTBR} 
-                                                  updateShelves={updateShelves}
-                                                  shelfName={s}/>}/> );})}
-        
-
-        {readingGoals && readingGoals.map( goal => {
-            return(<Route path={"/reading-goal/" + goal.Year} 
-                          element={<ReadingGoal loadLocalStorage={loadLocalStorage} 
-                                                currentYear={goal.Year}/>}/>)})}
+        <Route path="/Better-Reads">
+          <Route path="home" element={<HomePage setLocalStorage={setLocalStorage}/>}/>
+          <Route path="tbr" element={<TBR loadLocalStorage={loadLocalStorage}
+                                           setLocalStorage={setLocalStorage}
+                                           updateLibrary={updateLibrary} 
+                                           updateTBR={updateTBR}/>}/>
+          
+          <Route path="bookshelves/:shelfName" 
+                 element={<Bookshelves loadLocalStorage={loadLocalStorage}
+                                        updateLibrary={updateLibrary}
+                                        updateTBR={updateTBR} 
+                                        updateShelves={updateShelves}
+                                        />}/>
 
 
-        <Route path="/about" element={<AboutPage/>}/>
+          <Route path="reading-goal/:year"
+                 element={<ReadingGoal loadLocalStorage={loadLocalStorage} 
+                                       updateGoal={updateGoal}/>}/>
 
-        <Route path="/recommendations" element={<ComingSoon/>}/>
-        
+
+          <Route path="about" element={<AboutPage/>}/>
+
+          <Route path="recommendations" element={<ComingSoon/>}/>
+        </Route>
       </Routes>
       
       
