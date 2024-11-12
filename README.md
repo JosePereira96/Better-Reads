@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+**App Name:** Better Reads
+**By:** José Pereira
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Welcome to the Better Reads app! This web app is designed to help you keep track of your reading habits, organize your books by genre, create custom bookshelves, rate your books, and manage your "to be read" list.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Book Organization:** You can group your books according to genre in predefined bookshelves or create custom bookshelves to suit your preferences.
+  
+- **Book Ratings:** Rate your books to keep track of your favorites and provide feedback on your reading experiences.
+  
+- **Book Information Editing:** Edit book details such as title, author, genre, and rating to keep your library up-to-date.
+  
+- **Add and Remove Books:** Easily add new books to your library or remove books you've finished or no longer wish to track.
+  
+- **To Be Read (TBR) List:** Maintain a "to be read" list where you can add books you're interested in reading. The list supports drag-and-drop functionality, allowing you to reorder books according to your priority.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Getting Started:**
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Docker installed on your system (follow the instructions below to 
+install)
+* Basic knowledge of Docker and containerization
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **If you don't want to use the containerized version app you can use a static version (with some features disabled) in https://josepereira96.github.io/Better-Reads/**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installing Docker
 
-### `npm run eject`
+To get started with this app, you'll need to have Docker installed on your 
+system. You can download the latest version of Docker from the official 
+website:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+https://www.docker.com/get-started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Follow the installation instructions for your operating system.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the App
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Once you've got Docker up and running, follow these steps to get started 
+with this app:
 
-## Learn More
+#### Step 1: Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clone this repository using Git:
+```bash
+git clone https://github.com/josepereira96/better-reads.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Step 2: Build and Run the Docker Container
 
-### Code Splitting
+Navigate to the cloned repository directory:
+```bash
+cd better-reads
+```
+Run the following command to build and start a new container:
+```bash
+docker-compose up --build
+```
+This will download the necessary dependencies, build the Docker image, and 
+start a new container with the app running.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can now access the web application by navigating to 
+`http://localhost:3000` in your browser.
 
-### Analyzing the Bundle Size
+### Stopping the Container
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To stop the container and clean up any resources used during execution, 
+run:
+```bash
+docker-compose down
+```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technologies Used
 
-### Advanced Configuration
+- **Google Books API:** Used to fetch book covers and additional book information.
+- **HTML, CSS, JavaScript:** The core technologies used to build the web app.
+- **Docker** App containerization.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+If you encounter any issues while using Better Reads or have any suggestions for improvement, please feel free to reach out to me at [your-email@example.com](mailto:your-email@example.com).
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy reading! 📚

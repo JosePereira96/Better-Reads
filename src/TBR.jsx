@@ -74,7 +74,7 @@ function TBR({ loadLocalStorage, setLocalStorage, updateLibrary, updateTBR}) {
         {(provided) => (
           <div {...provided.droppableProps} ref={provided.innerRef} className="month">
               <h3>{month.name}</h3>
-            
+              
               {month.books.map((book, i) => {
                   return(<TBRItem book={book}
                                   index={i} 
@@ -83,6 +83,8 @@ function TBR({ loadLocalStorage, setLocalStorage, updateLibrary, updateTBR}) {
                                   updateTBR={updateTBR} />);
                 }
               )}
+
+              
             {provided.placeholder}
           </div>
 
